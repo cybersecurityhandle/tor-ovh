@@ -1,0 +1,24 @@
+# Managed by Terraform - edits on the server are overwritten.
+# Non-exit relay. Do not enable exiting on OVH without written approval from them.
+
+Nickname ${nickname}
+ContactInfo ${contact_info}
+
+# Binds IPv4 and IPv6 (if the host has a global v6 address).
+ORPort ${or_port}
+
+ExitRelay 0
+ExitPolicy reject *:*
+ExitPolicy reject6 *:*
+SocksPort 0
+
+RelayBandwidthRate ${bandwidth_rate}
+RelayBandwidthBurst ${bandwidth_burst}
+%{ if accounting_max != "" ~}
+
+AccountingMax ${accounting_max}
+AccountingStart month 1 00:00
+%{ endif ~}
+
+Log notice syslog
+DataDirectory /var/lib/tor

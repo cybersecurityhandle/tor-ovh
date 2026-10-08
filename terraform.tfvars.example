@@ -1,0 +1,10 @@
+service_name = "ns1234567.ip-1-2-3.net"
+nickname     = "MyOvhRelay"
+contact_info = "you@example.com"
+
+# Optional
+# ovh_endpoint   = "ovh-eu"
+# reverse_dns    = "tor-relay.example.com."
+# or_port        = 443
+# bandwidth_rate = "50 MBytes"
+# accounting_max = "20 TBytes"
